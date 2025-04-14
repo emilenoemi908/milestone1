@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"Atributo"},{"p":"<Unnamed>","l":"Facade"},{"p":"<Unnamed>","l":"InvalidAtributeException"},{"p":"<Unnamed>","l":"InvalidUserException"},{"p":"<Unnamed>","l":"RecadoException"},{"p":"<Unnamed>","l":"Repositorio"},{"p":"<Unnamed>","l":"User"}];updateSearchResults();

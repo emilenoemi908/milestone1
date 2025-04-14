@@ -1,0 +1,92 @@
+@startuml
+class Atributo {
+- {static} long serialVersionUID
+- String nome
+- String valor
++ String getNome()
++ void setNome(String)
++ String getValor()
++ void setValor(String)
+}
+
+
+class User {
+- {static} long serialVersionUID
+- String login
+- String nome
+- String senha
+- String idSessao
+- Map<String,Atributo> atributosExtras
+- ArrayList<String> amigos
+- Set<String> solicitacoesAmizade
+- ArrayList<String> mensagens
++ String getLogin()
++ void setLogin(String)
++ String getNome()
++ void setNome(String)
++ String getSenha()
++ void setSenha(String)
++ String getIdSessao()
++ void setIdSessao(String)
++ void addAtributoExtra(String,String)
++ Atributo getAtributoExtra(String)
++ List<String> getAmigos()
++ Set<String> getSolicitacoesAmizade()
++ ArrayList<String> getMensagens()
+}
+
+
+class Repositorio {
+- Map<String,User> users
++ void carregarDados()
++ void zerarSistema()
++ void encerrarSistema()
++ void quit()
+- User getUserById(String)
++ void CriarUsuario(String,String,String)
++ String getAtributoUsuario(String,String)
++ String abrirSessao(String,String)
++ void editarPerfil(String,String,String)
++ void adicionarAmigo(String,String)
++ boolean ehAmigo(String,String)
++ String getAmigos(String)
++ void enviarRecado(String,String,String)
++ String lerRecado(String)
+}
+
+
+class Main {
++ {static} void main(String[])
+}
+
+class Facade {
+- Repositorio repositorio
++ void criarUsuario(String,String,String)
++ String abrirSessao(String,String)
++ String getAtributoUsuario(String,String)
++ void zerarSistema()
++ void encerrarSistema()
++ void quit()
++ void editarPerfil(String,String,String)
++ void adicionarAmigo(String,String)
++ boolean ehAmigo(String,String)
++ String getAmigos(String)
++ void enviarRecado(String,String,String)
++ String lerRecado(String)
+}
+
+
+class InvalidUserException {
+}
+class InvalidAtributeException {
+}
+class RecadoException {
+}
+
+
+java.io.Serializable <|.. Atributo
+java.io.Serializable <|.. User
+RuntimeException <|-- InvalidUserException
+RuntimeException <|-- InvalidAtributeException
+RuntimeException <|-- RecadoException
+@enduml
